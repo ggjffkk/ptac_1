@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Заголовок веб-сторінки -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculator</title>
+   <!-- Підключення шрифтів з Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+  <!-- Підключення зовнішнього CSS файла для стилів -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Верхня частина сторінки з навігацією -->
+  <header>
+    <div class="header">
+      <nav>
+        <!-- Навігаційне меню з посиланнями на різні калькулятори -->
+        <ul>
+          <li><a href="#Task1">Task1</a></li>
+          <li><a href="#Task2">Task2</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <!-- Перший розділ з першим калькулятором -->
+    <section class="Task1" id="Task1">
+      <div class="container">
+        <div class="input-wrapper">
+          <div class="wrapper">
+            <label for="Hp">H<sup>Р</sup>:</label>
+            <input type="number" id="Hp" value="1.4" />
+          </div>
+          <div class="wrapper">
+            <label for="Cp">C<sup>Р</sup>:</label>
+            <input type="number" id="Cp" value="70.5" />
+          </div>
+          <div class="wrapper">
+            <label for="Sp">S<sup>Р</sup>:</label>
+            <input type="number" id="Sp" value="1.7" />
+          </div>
+          <div class="wrapper">
+            <label for="Np">N<sup>Р</sup>:</label>
+            <input type="number" id="Np" value="0.8" />
+          </div>
+        </div>
+        <div class="input-wrapper-t">
+          <div class="wrapper">
+            <label for="Op">O<sup>Р</sup>:</label>
+            <input type="number" id="Op" value="1.9" />
+          </div>
+          <div class="wrapper">
+            <label for="Wp">W<sup>Р</sup>:</label>
+            <input type="number" id="Wp" value="7" />
+          </div>
+          <div class="wrapper">
+            <label for="Ap">A<sup>Р</sup>:</label>
+            <input type="number" id="Ap" value="16.7" />
+          </div>
+        </div>
+        <!-- Кнопка для обчислення -->
+        <button id ="Task1-btn">Calculate</button>
+        <div id="result1"></div>
+    </section>
+    <!-- Другий розділ з другим калькулятором -->
+    <section class="Task2" id="Task2">
+      <div class="container">
+        <div class="input-wrapper">
+          <div class="wrapper">
+            <label for="Hg">H<sup>G</sup>:</label>
+            <input type="number" id="Hg" value="11.2" />
+          </div>
+          <div class="wrapper">
+            <label for="Cg">C<sup>G</sup>:</label>
+            <input type="number" id="Cg" value="85.5" />
+          </div>
+          <div class="wrapper">
+            <label for="Sg">S<sup>G</sup>:</label>
+            <input type="number" id="Sg" value="2.5" />
+          </div>
+          <div class="wrapper">
+            <label for="Og">O<sup>G</sup>:</label>
+            <input type="number" id="Og" value="0.8" />
+          </div>
+        </div>
+        <div class="input-wrapper">
+          <div class="wrapper">
+            <label for="Vg">V<sup>G</sup>:</label>
+            <input type="number" id="Vg" value="333.3" />
+          </div>
+          <div class="wrapper">
+            <label for="Wg">W<sup>G</sup>:</label>
+            <input type="number" id="Wg" value="2" />
+          </div>
+          <div class="wrapper">
+            <label for="Ag">A<sup>G</sup>:</label>
+            <input type="number" id="Ag" value="0.15" />
+          </div>
+          <div class="wrapper">
+            <label for="Qdafi">Q<sup>dafi</sup>:</label>
+            <input type="number" id="Qdafi" value="40.4" />
+          </div>
+        </div>
+        <!-- Кнопка для обчислення -->
+        <button id ="Task2-btn">Calculate</button>
+        <div id="result2"></div>
+    </section> 
+
+  <!-- Підключення зовнішнього JavaScript файла -->
+  <script src="script.js"></script>
+  <!-- JavaScript код для плавної прокрутки до секцій при кліку на посилання -->
+  <script>
+    const anchors = document.querySelectorAll('a[href*="#"]');
+
+    for (let anchor of anchors){
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        const blockId = anchor.getAttribute('href').substr(1);
+
+        document.getElementById(blockId).scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        })
+      })
+    }
+  </script>
+  
+</main>
+</body>
+</html>
